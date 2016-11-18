@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<swiper indicator-dots="{{indicatorDots}}"  
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
+    <block wx:for="{{images}}">  
+    <swiper-item>  
+        <navigator url="{{item.link}}" hover-class="navigator-hover">  
+        <image src="{{item.img_path}}" class="slide-image" style="width:100%;"/>  
+        </navigator>   
+    </swiper-item>  
+    </block>  
+</swiper>
+<block wx:for-items="{{dao}}" wx:key="name">
+<view class="nav-item" catchtap="catchTapCategory" data-type="{{item.name}}">
+<image src="{{item.dao_img}}" class="nav-image"/>
+<text>{{item.name}}</text>
+</view>
+</block>
+<view><text class="zi">商城客户</text></view>
+<block wx:for-items="{{kehu}}" wx:key="name">
+<view class="kehu">
+<image src="{{item.kehu_img}}" class="kehu-image"/>
+<text class="kehu-zi">{{item.name}}</text>
+</view>
+</block>
+<view><text class="zi">精选促销</text></view>
+<block wx:for-items="{{sale}}" wx:key="name">
+<view class="cuxiao">
+<image src="{{item.sale_img}}" class="cuxiao-image"/>
+<text class="kehu-zi">{{item.name}}＄{{item.sale_price}}＄{{item.price}}</text>
+</view>
+</block>
